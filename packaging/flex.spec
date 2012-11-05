@@ -9,6 +9,7 @@ Source:         %{name}-%{version}.tar.bz2
 Source1:        lex-wrapper.sh
 Source3:        baselibs.conf
 BuildRequires:  automake
+BuildRequires:  makeinfo
 BuildRequires:  bison
 BuildRequires:  gcc-c++
 BuildRequires:  gettext-tools

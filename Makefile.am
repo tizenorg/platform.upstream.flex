@@ -111,7 +111,6 @@ BUILT_SOURCES = \
 SUBDIRS = \
 	lib \
 	. \
-	doc \
 	examples \
 	po \
 	tools \
