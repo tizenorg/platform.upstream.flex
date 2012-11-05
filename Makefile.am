@@ -40,8 +40,7 @@ indent = @INDENT@
 
 bin_PROGRAMS = flex
 lib_LIBRARIES = \
-	libfl.a \
-	libfl_pic.a
+	libfl.a
 
 flex_SOURCES = \
 	ccl.c \
@@ -73,13 +72,7 @@ libfl_a_SOURCES = \
 	libmain.c \
 	libyywrap.c
 
-libfl_pic_a_SOURCES = \
-	libmain.c \
-	libyywrap.c
-
-libfl_pic_a_CFLAGS =  \
-	-fPIC         \
-	$(AM_CFLAGS)
+libfl_a_CFLAGS = -fPIC $(AM_CFLAGS)
 
 noinst_HEADERS = \
 	flexdef.h \
