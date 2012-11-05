@@ -1,5 +1,5 @@
 Name:           flex
-Version:        2.5.35
+Version:        2.5.37
 Release:        0
 License:        BSD-3-Clause
 Summary:        Fast Lexical Analyzer Generator
