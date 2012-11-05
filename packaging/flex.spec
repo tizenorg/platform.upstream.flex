@@ -1,3 +1,4 @@
+%define keepstatic 1
 Name:           flex
 Version:        2.5.37
 Release:        0
@@ -35,9 +36,8 @@ make check
 %install
 %make_install
 install %{SOURCE1}  %{buildroot}/%{_bindir}/lex
-ln -s flex %{buildroot}/%{_bindir}/flex++
-ln -s flex.1.gz %{buildroot}/%{_mandir}/man1/lex.1.gz
 
+%remove_docs
 %files
 %defattr(-,root,root)
 /usr/bin/flex
@@ -45,7 +45,3 @@ ln -s flex.1.gz %{buildroot}/%{_mandir}/man1/lex.1.gz
 /usr/bin/lex
 /usr/include/FlexLexer.h
 %{_libdir}/libfl.a
-%{_mandir}/man1/flex.1.gz
-%{_mandir}/man1/lex.1.gz
-%{_infodir}/flex*
-
