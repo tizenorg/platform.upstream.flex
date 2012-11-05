@@ -1,0 +1,15 @@
+libraries need to be last
+
+Index: tests/test-pthread/Makefile.am
+===================================================================
+--- tests/test-pthread/Makefile.am.orig
++++ tests/test-pthread/Makefile.am
+@@ -37,7 +37,7 @@ scanner.c: $(srcdir)/scanner.l
+ 	$(FLEX) $(LFLAGS) $<
+ 
+ $(testname)$(EXEEXT): $(OBJS)
+-	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LOADLIBES)
++	$(CC) -o $@ $(OBJS) $(LOADLIBES) $(LDFLAGS)
+ 
+ test: $(testname)$(EXEEXT)
+ 	./$(testname) $(srcdir)/test-*.input
