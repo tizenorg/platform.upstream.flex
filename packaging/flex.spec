@@ -8,11 +8,6 @@ Group:          Development/Languages/C and C++
 Source:         %{name}-%{version}.tar.bz2
 Source1:        lex-wrapper.sh
 Source3:        baselibs.conf
-Patch1:         flex-2.5.34-fPIC.patch
-Patch2:         flex-2.5.33-yylineno.patch
-Patch3:         flex-2.5.34-doc-fix.diff
-Patch4:         flex-2.5.34-g++44.diff
-Patch5:         flex-2.5.34-asneeded.patch
 BuildRequires:  automake
 BuildRequires:  bison
 BuildRequires:  gcc-c++
@@ -25,13 +20,6 @@ patterns in text.
 
 %prep
 %setup -q
-%patch1
-# Patch2 disabled for now, as the testsuite explicitly tests for yylineno in
-# all scanners. Let's see if the failing packages got fixed in the meantime.
-#patch2
-%patch3
-%patch4
-%patch5
 
 %build
 autoreconf -fi
