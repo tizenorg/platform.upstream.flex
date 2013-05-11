@@ -39,6 +39,7 @@ install %{SOURCE1}  %{buildroot}/%{_bindir}/lex
 
 %remove_docs
 %files
+%license COPYING
 %defattr(-,root,root)
 /usr/bin/flex
 /usr/bin/flex++
