@@ -9,6 +9,7 @@ Group:          Development/Languages/C and C++
 Source:         %{name}-%{version}.tar.bz2
 Source1:        lex-wrapper.sh
 Source3:        baselibs.conf
+Source1001: 	flex.manifest
 BuildRequires:  automake
 BuildRequires:  makeinfo
 BuildRequires:  bison
@@ -22,6 +23,7 @@ patterns in text.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 autoreconf -fi
@@ -39,6 +41,7 @@ install %{SOURCE1}  %{buildroot}/%{_bindir}/lex
 
 %remove_docs
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root)
 /usr/bin/flex
