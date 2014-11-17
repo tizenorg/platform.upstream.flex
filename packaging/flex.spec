@@ -1,11 +1,11 @@
 %define keepstatic 1
 Name:           flex
-Version:        2.5.37
+Version:        2.5.39
 Release:        0
 License:        BSD-3-Clause
 Summary:        Fast Lexical Analyzer Generator
 Url:            http://flex.sourceforge.net/
-Group:          Development/Languages/C and C++
+Group:          Platform Development/Utilities
 Source:         %{name}-%{version}.tar.bz2
 Source1:        lex-wrapper.sh
 Source3:        baselibs.conf
@@ -21,9 +21,11 @@ Requires:       m4
 FLEX is a tool for generating scanners: programs that recognize lexical
 patterns in text.
 
+
 %prep
 %setup -q
 cp %{SOURCE1001} .
+
 
 %build
 autoreconf -fi
@@ -35,11 +37,18 @@ make %{?_smp_mflags}
 make check
 %endif
 
+
 %install
 %make_install
 install %{SOURCE1}  %{buildroot}/%{_bindir}/lex
 
 %remove_docs
+
+%post -p /sbin/ldconfig
+
+%postun  -p /sbin/ldconfig
+
+
 %files
 %manifest %{name}.manifest
 %license COPYING
@@ -48,4 +57,4 @@ install %{SOURCE1}  %{buildroot}/%{_bindir}/lex
 /usr/bin/flex++
 /usr/bin/lex
 /usr/include/FlexLexer.h
-%{_libdir}/libfl.a
+%{_libdir}/libfl*
