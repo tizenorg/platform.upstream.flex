@@ -9,12 +9,13 @@ Group:          Platform Development/Utilities
 Source:         %{name}-%{version}.tar.bz2
 Source1:        lex-wrapper.sh
 Source3:        baselibs.conf
-Source1001: 	flex.manifest
+Source1001:     flex.manifest
 BuildRequires:  automake
 BuildRequires:  makeinfo
 BuildRequires:  bison
 BuildRequires:  gcc-c++
 BuildRequires:  gettext-tools
+BuildRequires:  flex
 Requires:       m4
 
 %description
