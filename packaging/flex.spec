@@ -26,6 +26,9 @@ patterns in text.
 cp %{SOURCE1001} .
 
 %build
+export CFLAGS+=" -fvisibility=hidden"
+  export CXXFLAGS+=" -fvisibility=hidden"
+  
 autoreconf -fi
 %configure --disable-nls
 make %{?_smp_mflags}

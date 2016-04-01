@@ -58,7 +58,7 @@ extern "C++" {
 struct yy_buffer_state;
 typedef int yy_state_type;
 
-class FlexLexer {
+class __attribute__ ((visibility ("default"))) FlexLexer {
 public:
 	virtual ~FlexLexer()	{ }
 
@@ -109,7 +109,7 @@ protected:
 
 extern "C++" {
 
-class yyFlexLexer : public FlexLexer {
+class __attribute__ ((visibility ("default"))) yyFlexLexer : public FlexLexer {
 public:
 	// arg_yyin and arg_yyout default to the cin and cout, but we
 	// only make that assignment when initializing in yylex().
